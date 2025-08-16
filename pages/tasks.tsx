@@ -1,0 +1,1 @@
+export default function Tasks(){return (<main className='min-h-screen bg-bg text-text p-6'><h1 className='text-2xl font-bold mb-4'>Задания</h1><p>Здесь будет список заданий по цветам и отправка подтверждений.</p></main>);}
