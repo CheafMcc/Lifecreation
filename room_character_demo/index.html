@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Комната с персонажем — демо</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Login overlay -->
+    <div class="overlay" id="loginOverlay" aria-hidden="false">
+      <div class="card">
+        <h1>Вход</h1>
+        <p class="muted">Введите любой логин — это демо без сервера.</p>
+        <form id="loginForm">
+          <label>
+            Логин
+            <input type="text" id="loginInput" placeholder="username" required>
+          </label>
+          <label>
+            Пароль
+            <input type="password" id="passwordInput" placeholder="password" required>
+          </label>
+          <button type="submit" id="loginBtn">Войти</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scene -->
+    <div class="scene" id="scene" aria-hidden="true">
+      <div class="room">
+        <div class="wall back"></div>
+        <div class="wall left"></div>
+        <div class="wall right"></div>
+        <div class="floor"></div>
+
+        <!-- Door -->
+        <div class="door-frame">
+          <div class="door" id="door"></div>
+        </div>
+
+        <!-- Character (simple SVG) -->
+        <svg id="character" class="character" width="80" height="160" viewBox="0 0 80 160" aria-label="персонаж">
+          <!-- head -->
+          <circle cx="40" cy="28" r="16" fill="#f1d3b3" />
+          <!-- body -->
+          <rect x="25" y="48" width="30" height="50" rx="8" fill="#4f46e5" />
+          <!-- arms -->
+          <rect x="15" y="52" width="10" height="38" rx="6" fill="#4f46e5" />
+          <rect x="55" y="52" width="10" height="38" rx="6" fill="#4f46e5" />
+          <!-- legs -->
+          <rect x="28" y="98" width="10" height="44" rx="5" fill="#222" />
+          <rect x="42" y="98" width="10" height="44" rx="5" fill="#222" />
+          <!-- eyes -->
+          <circle cx="35" cy="26" r="2" fill="#222" />
+          <circle cx="45" cy="26" r="2" fill="#222" />
+          <!-- smile -->
+          <path d="M33 33 Q40 38 47 33" stroke="#222" stroke-width="2" fill="none"/>
+        </svg>
+
+        <!-- HUD -->
+        <div class="hud">
+          <button id="openDoorBtn" class="ghost">Открыть дверь</button>
+          <button id="resetBtn" class="ghost">Сброс</button>
+          <span id="status" class="status">Готово</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
